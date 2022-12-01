@@ -1,0 +1,25 @@
+.search-input-field{
+    display: inline-block;
+}
+
+.img-cover{
+    border: 2px solid rgb(62, 62, 62) !important;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+.img-cover img {
+    object-fit: contain;
+}
+
+.filters-container{
+    padding: 20px;
+}
+
+.items-container{
+    padding: 25px;
+    border: 1px solid gray;
+}

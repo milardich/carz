@@ -21,5 +21,66 @@
 
 .items-container{
     padding: 25px;
-    border: 1px solid gray;
+}
+
+.item-container{
+    border: 1px solid red;
+    height: 400px;
+    padding: 10px;
+    margin-top: 25px;
+    position: relative;
+}
+
+.item{
+    position: relative;
+    height: 100%;
+}
+
+.item-thumbnail-container{
+    width: 100%;
+    height: 40%;
+    background-color: red;
+}
+
+.item-thumbnail-container img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.item-title{
+    font-size: 1.4em;
+    border: 1px solid green;
+}
+
+.item-description{
+    border: 1px solid blueviolet;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;  /* limit to 2 lines */
+}
+
+.date-and-price-container{
+    position: absolute;
+    bottom: 0;
+    border: 1px solid black;
+    width: 100%;
+}
+
+.price-1{
+    font-size: 1.5em;
+}
+
+.save-button-container{
+    position: absolute;
+    padding: 5px;
+    top: 0;
+    right: 0;
+}
+
+a{
+    text-decoration: none;
+    color: black;
 }

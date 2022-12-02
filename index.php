@@ -7,12 +7,10 @@
     <title>Carz | Home</title>
 </head>
 <body>
+    <?php
+        include("navbar.php");
+    ?>
     <div class="container">
-
-        <?php
-            include("navbar.php");
-        ?>
-
         <div class="filters-container row">
             <div class="text-secondary mb-2">
                 Filters
@@ -50,6 +48,9 @@
 
         <div class="items-container row">
             <?php
+                include("item.php");
+                include("item.php");
+                include("item.php");
                 include("item.php");
                 include("item.php");
                 include("item.php");

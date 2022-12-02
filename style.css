@@ -28,12 +28,13 @@
     border: 1px solid gray;
     border-radius: 6px;
     height: 400px;
-    width: 307px;
+    width: 302px;
     padding: 10px;
     margin-top: 25px;
     position: relative;
     margin-left: 10px;
-
+    box-shadow: 0px 4px 5px black;
+    background-color: white;
 }
 
 .item{
@@ -85,4 +86,8 @@
 a{
     text-decoration: none;
     color: black;
+}
+
+.profile-dropdown{
+    box-shadow: 0px 2px 2px black;
 }

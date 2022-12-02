@@ -34,9 +34,7 @@
         </div>
 
         <div class="save-button-container">
-            <a href="#">
-                <object data="bookmark-solid.svg" width="30" height="30"> </object>
-            </a>
+            <object data="bookmark-solid.svg" width="30" height="30"> </object>
         </div>
     </a>
 </div>

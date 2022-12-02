@@ -18,9 +18,11 @@
             </div>
             <div class="date-and-price-container">
                 <div class="row">
-                    <div class="col-md-6">
-                        <object data="location-pin-solid.svg" width="15" height="15"> </object>
-                        <span class="location-text">Osijek</span>
+                    <div class="col-md-6 d-flex">
+                        <div class="d-block mt-auto">
+                            <object data="location-pin-solid.svg" width="15" height="15"> </object>
+                            <span class="location-text">Osijek</span>
+                        </div>
                     </div>
                     <div class="col-md-6">
                         <div class="text-end">

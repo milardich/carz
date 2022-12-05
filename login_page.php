@@ -14,17 +14,17 @@
         <div class="text-secondary text-center mt-5">
             Log in page
         </div>
-        <form class="form-container">
+        <form class="form-container" action="login_script.php" method="POST">
             <!-- Email input -->
             <div class="form-outline mb-4">
                 <label class="form-label" for="form2Example1">Email address</label>
-                <input type="email" id="form2Example1" class="form-control" />
+                <input type="email" id="form2Example1" class="form-control" name="email"/>
             </div>
 
             <!-- Password input -->
             <div class="form-outline mb-4">
                 <label class="form-label" for="form2Example2">Password</label>
-                <input type="password" id="form2Example2" class="form-control" />
+                <input type="password" id="form2Example2" class="form-control" name="password"/>
             </div>
 
             <!-- 2 column grid layout for inline styling -->
@@ -39,7 +39,7 @@
             </div>
 
             <!-- Submit button -->
-            <button type="button" class="btn btn-primary mb-4 full-width-button">Log in</button>
+            <button type="submit" class="btn btn-primary mb-4 full-width-button">Log in</button>
 
             <!-- Register buttons -->
             <div class="text-center">

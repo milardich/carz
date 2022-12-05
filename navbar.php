@@ -1,3 +1,8 @@
+<?php
+    session_start();
+    include 'includes/autoLoader.php';
+    $user = new User();
+?>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">CARZ</a>
@@ -14,7 +19,8 @@
 
             <div class="nav-item dropdown ms-auto">
                 <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <img src="random_guy.jpg" class="img-cover">
+                    <!-- <img src="random_guy.jpg" class="img-cover"> -->
+                    <img src="<?php echo $user->GetUserProfilePicture($_SESSION["LOGGED_IN_USER_ID"]); ?>" class="img-cover">
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end profile-dropdown" aria-labelledby="navbarDropdown">
                     <li><a class="dropdown-item" href="#">Profile</a></li>

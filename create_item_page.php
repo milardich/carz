@@ -38,8 +38,13 @@
             </div>
 
             <div class="form-outline mb-4">
-                <label for="exampleFormControlFile1">Upload images</label>
-                <input type="file" class="form-control-file" id="exampleFormControlFile1" multiple>
+                <label for="exampleFormControlFile1">Upload thumbnail image</label>
+                <input type="file" name="thumbnail_img" class="form-control-file" id="exampleFormControlFile1">
+            </div>
+
+            <div class="form-outline mb-4">
+                <label for="exampleFormControlFile1">Upload item images</label>
+                <input type="file" class="form-control-file" id="exampleFormControlFile1" multiple disabled>
             </div>
 
 

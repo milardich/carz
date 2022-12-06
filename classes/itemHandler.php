@@ -35,5 +35,8 @@ class ItemHandler{
             '$this->_itemTitle', '$this->_itemDescription', '$this->_itemLocation', '$this->_itemPrice', '$this->_itemThumbnail', '$current_date'
         )";
         $result = Database::Connect()->query($sql_insert);
+        if(!$result){
+            echo "Failed!";
+        }
     }
 }

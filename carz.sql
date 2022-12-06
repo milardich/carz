@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 05, 2022 at 11:45 PM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 8.1.12
+-- Generation Time: Dec 06, 2022 at 10:30 AM
+-- Server version: 10.4.6-MariaDB
+-- PHP Version: 7.3.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -33,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `car_makers` (
   `car_maker_id` int(11) NOT NULL AUTO_INCREMENT,
   `car_maker_name` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`car_maker_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `car_makers`
@@ -56,7 +57,7 @@ CREATE TABLE IF NOT EXISTS `car_types` (
   `car_type` varchar(50) DEFAULT NULL,
   `car_maker_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`car_type_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `car_types`
@@ -88,7 +89,7 @@ CREATE TABLE IF NOT EXISTS `images` (
   `image_url` text DEFAULT NULL,
   `user_id` int(11) NOT NULL,
   PRIMARY KEY (`image_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `images`
@@ -110,8 +111,22 @@ CREATE TABLE IF NOT EXISTS `items` (
   `item_location` varchar(50) DEFAULT NULL,
   `item_price` float DEFAULT NULL,
   `item_thumbnail` text DEFAULT NULL,
+  `item_date_posted` date NOT NULL,
   PRIMARY KEY (`item_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `items`
+--
+
+INSERT INTO `items` (`item_id`, `item_title`, `item_description`, `item_location`, `item_price`, `item_thumbnail`, `item_date_posted`) VALUES
+(4, 'Opel astra', 'very goodcar', 'Vinkovci', 9999, '', '0000-00-00'),
+(5, 'Opel insignia', 'very sdasdsdvery sdasdsdvery sdasdsdvery sdasdsdvery sdasdsdvery sdasdsdvery sdasdsdvery sdasdsdvery sdasdsdvery sdasdsdvery sdasdsdvery sdasdsdvery sdasdsdvery sdasdsdvery sdasdsd', 'Vukovar', 13212, '', '2022-12-06'),
+(7, 'Fiat punto', 'asdfasfsdfadfsfsdfsdf', 'Osijek', 2400, '', '2022-12-06'),
+(8, 'Fiat punto', 'asdfasfsdfadfsfsdfsdf', 'Osijek', 2400, '', '2022-12-06'),
+(9, 'Fiat punto', 'asdfasfsdfadfsfsdfsdf', 'Osijek', 2400, '', '2022-12-06'),
+(10, 'qweqweeqw', 'qweqweqweqwe', 'qweweqweqwe', 123123, 'images/', '2022-12-06'),
+(11, 'TEST123123123 PUNTO', 'qweqweqweqwe', 'qweweqweqwe', 123123, 'images/', '2022-12-06');
 
 -- --------------------------------------------------------
 
@@ -122,7 +137,7 @@ CREATE TABLE IF NOT EXISTS `items` (
 CREATE TABLE IF NOT EXISTS `saved_items` (
   `user_id` int(11) DEFAULT NULL,
   `item_id` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -137,7 +152,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `username` varchar(50) DEFAULT NULL,
   `profile_picture_url` text DEFAULT NULL,
   PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `users`

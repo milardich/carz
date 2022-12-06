@@ -164,3 +164,8 @@ a{
 .item-seller-info-container{
     border: 1px solid blue;
 }
+
+.nav-small-dropdown-arrow{
+    color: white;
+    font-size: 0.5em;
+}

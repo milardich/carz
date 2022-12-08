@@ -10,17 +10,21 @@ if( !isset($_POST["itemTitle"]) &&
     Header("Location: create_item_page.php?failed=true");
 }
 else{
+    //echo $_FILES["thumbnail_img"]["name"];
+    //echo "\n" . $_POST["itemTitle"];
+    
     $itemHandler = new ItemHandler();
     $itemHandler->SetItemTitle($_POST["itemTitle"]);
     $itemHandler->SetItemDescription($_POST["itemDescription"]);
     $itemHandler->SetItemLocation($_POST["itemLocation"]);
     $itemHandler->SetItemPrice($_POST["itemPrice"]);
     $itemHandler->SetItemThumbnail("images/" . $_FILES["thumbnail_img"]["name"]);
-    $itemHandler->SaveItem();
+    //$itemHandler->SaveItem();
 
     $imageHandler = new ImageHandler();
     $imageHandler->UploadImage($_FILES["thumbnail_img"]);
 
     echo "\n Saved item: \n";
     echo $_POST["itemTitle"] . ": " . $_POST["itemPrice"];
+    
 }

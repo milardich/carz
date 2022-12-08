@@ -1,6 +1,6 @@
 <?php
 include_once 'database.php';
-class User {
+class User { // mby change this to UserHandler
     public function GetUserDataByEmail($user_email){
         $sql = "SELECT * FROM users WHERE user_email = '$user_email'";
         $result = Database::Connect()->query($sql);

@@ -14,7 +14,7 @@
         <div class="text-secondary text-center mt-5">
             Create new item
         </div>
-        <form class="form-container" action="create_item_script.php" method="POST">
+        <form class="form-container" enctype="multipart/form-data" action="create_item_script.php" method="POST">
             <!-- Item title input -->
             <div class="form-outline mb-4">
                 <label class="form-label" for="form2Example1">Title</label>
@@ -39,7 +39,7 @@
 
             <div class="form-outline mb-4">
                 <label for="exampleFormControlFile1">Upload thumbnail image</label>
-                <input type="file" name="thumbnail_img" class="form-control-file" id="exampleFormControlFile1">
+                <input type="file" name="thumbnail_img" id="thumbnail_img" class="form-control-file" id="exampleFormControlFile1">
             </div>
 
             <div class="form-outline mb-4">

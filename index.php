@@ -16,18 +16,32 @@
                 Filters
             </div>
             <div class="col-md-4">
-                Manufacturer
+                Car maker
                 <select class="form-select mt-2" aria-label="Default select example">
                     <option selected>-</option>
-                    <option value="1">Volkswagen</option>
-                    <option value="2">BMW</option>
-                    <option value="3">Toyota</option>
+                    <?php
+                        $carMakerHandler = new CarMakerHandler();
+                        $carMakers = $carMakerHandler->GetAllCarMakers();
+                        foreach($carMakers as $carMaker){
+                            ?>
+                                <option value=<?php echo $carMaker["car_maker_id"]; ?>> <?php echo $carMaker["car_maker_name"]; ?> </option>
+                            <?php
+                        }
+                    ?>
                 </select>
             </div>
             <div class="col-md-4">
                 Type
                 <select class="form-select mt-2" aria-label="Default select example">
                     <option selected>-</option>
+                    <?php
+                        $carTypes = $carMakerHandler->GetAllTypesFromCarMaker(2);
+                        foreach($carTypes as $carType){
+                            ?>
+                                <option value=<?php echo $carType["car_type_id"]; ?>> <?php echo $carType["car_type"]; ?> </option>
+                            <?php
+                        }
+                    ?>
                     <option value="1">3 Series</option>
                     <option value="2">4 Series</option>
                     <option value="3">5 Series</option>
@@ -42,7 +56,7 @@
 
             <div class="col-md-1">
                 <br>
-                <button type="button" class="btn btn-primary mt-2">Filter</button>
+                <button type="button" class="btn btn-primary mt-2" id="filter_button">Filter</button>
             </div>
         </div>
 
@@ -92,15 +106,7 @@
                 }
             ?>
             <?php
-                include("item.php");
-                include("item.php");
-                include("item.php");
-                include("item.php");
-                include("item.php");
-                include("item.php");
-                include("item.php");
-                include("item.php");
-                include("item.php");
+
             ?>
         </div>
     </div>

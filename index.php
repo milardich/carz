@@ -53,7 +53,7 @@
                     //echo $item["item_id"] . "\n";
                     ?>
                     <div class="col-md-3 item-container">
-                        <a href="item_page.php?id='<?php echo $item["item_id"]; ?>'">
+                        <a href="item_page.php?id=<?php echo $item["item_id"]; ?>">
                             <div class="item">
                                 <div class="item-thumbnail-container">
                                     <img src="<?php echo $item["item_thumbnail"]; ?>">
@@ -83,7 +83,7 @@
                                 </div>
                             </div>
 
-                            <div class="save-button-container">
+                            <div class="save-button-container" id="<?php echo $item["item_id"]; ?>">
                                 <object data="bookmark-solid.svg" width="30" height="30"> </object>
                             </div>
                         </a>

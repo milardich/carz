@@ -62,11 +62,12 @@ class ItemHandler{
 
     public function GetItemById($id){
         $item_data = array();
-        $sql = "SELECT * FROM items WHERE item_id = '$id'";
+        $sql = "SELECT * FROM items WHERE item_id = '$id' ";
+        //$sql = "SELECT * FROM items";
         $result = Database::Connect()->query($sql);
         if($result->num_rows > 0){
             $row = $result->fetch_assoc();
-            $item_data[] = array(
+            $item_data = array(
                 'item_id' => $row["item_id"],
                 'item_title' => $row["item_title"],
                 'item_description' => $row["item_description"],
@@ -76,5 +77,7 @@ class ItemHandler{
                 'item_date_posted' => $row["item_date_posted"]
             );
         }
+
+        return $item_data;
     }
 }

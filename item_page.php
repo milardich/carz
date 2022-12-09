@@ -10,6 +10,17 @@
     <?php
         include("navbar.php");
     ?>
+
+    <?php
+        if(!isset($_GET["id"])){
+            Header("Location: index.php");
+            exit();
+        }
+        $item_id = $_GET["id"];
+        $itemHandler = new ItemHandler();
+        $item = $itemHandler->GetItemById($item_id);
+    ?>
+    
     <div class="container">
         <div class="item-details-container mt-3">
             <div class="item-pictures-container">
@@ -19,7 +30,7 @@
                         <button class="btn btn-secondary switch-img-button"><</button>
                     </div>
                     <div class="col-10 p-0">
-                        <img src="jaguar_thumbnail.jpg" alt="">
+                        <img src='<?php echo $item["item_thumbnail"]; ?>'>
                     </div>
                     <div class="switch-img-button-container col-1 p-0 d-flex aligns-items-center">
                         <button class="btn btn-secondary switch-img-button">></button>
@@ -66,15 +77,15 @@
             
             <div class="item-info-container p-2 mt-3">
                 <div class="item-title">
-                    Jaguar askldjasld jalsdk
+                    <?php echo $item["item_title"]; ?>
                 </div>
 
                 <div class="item-description">
-                    jaguar description test jaguar description test jaguar description test jaguar description test
+                    <?php echo $item["item_description"]; ?>
                 </div>
 
                 <div class="item-price">
-                    $4999
+                    $<?php echo $item["item_price"]; ?>
                 </div>
             </div>
 
@@ -82,7 +93,7 @@
                 <div class="seller-info-box">
                     <span class="text-secondary">Date posted: </span> 
                     <div class="d-inline-block">
-                        19/12/2022
+                        <?php echo $item["item_date_posted"]; ?>
                     </div>
                 </div>
                 <div class="seller-info-box">
@@ -96,7 +107,7 @@
                 <div class="seller-info-box">
                     <span class="text-secondary">Location: </span> 
                     <div class="d-inline-block">
-                        Osijek
+                        <?php echo $item["item_location"]; ?>
                     </div>
                 </div>
 

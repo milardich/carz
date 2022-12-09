@@ -1,6 +1,6 @@
 <?php
 
-include 'database.php';
+include_once 'database.php';
 
 class ItemHandler{
     private $_itemTitle = "";
@@ -37,6 +37,44 @@ class ItemHandler{
         $result = Database::Connect()->query($sql_insert);
         if(!$result){
             echo "Failed!";
+        }
+    }
+
+    public function GetAllItems(){
+        $items = array();
+        $sql = "SELECT * FROM items";
+        $result = Database::Connect()->query($sql);
+        if($result->num_rows > 0){
+            while($row = $result->fetch_assoc()){
+                $items[] = array(
+                    'item_id' => $row["item_id"],
+                    'item_title' => $row["item_title"],
+                    'item_description' => $row["item_description"],
+                    'item_location' => $row["item_location"],
+                    'item_price' => $row["item_price"],
+                    'item_thumbnail' => $row["item_thumbnail"],
+                    'item_date_posted' => $row["item_date_posted"]
+                );
+            }
+        }
+        return $items;
+    }
+
+    public function GetItemById($id){
+        $item_data = array();
+        $sql = "SELECT * FROM items WHERE item_id = '$id'";
+        $result = Database::Connect()->query($sql);
+        if($result->num_rows > 0){
+            $row = $result->fetch_assoc();
+            $item_data[] = array(
+                'item_id' => $row["item_id"],
+                'item_title' => $row["item_title"],
+                'item_description' => $row["item_description"],
+                'item_location' => $row["item_location"],
+                'item_price' => $row["item_price"],
+                'item_thumbnail' => $row["item_thumbnail"],
+                'item_date_posted' => $row["item_date_posted"]
+            );
         }
     }
 }

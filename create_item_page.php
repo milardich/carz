@@ -9,6 +9,10 @@
 <body>
     <?php
         include("navbar.php");
+        if(!isset($_SESSION["LOGGED_IN_USER_ID"])){
+            Header("Location: index.php");
+            exit();
+        }
     ?>
     <div class="container login-form-container">
         <div class="text-secondary text-center mt-5">

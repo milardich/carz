@@ -1,6 +1,10 @@
 <?php
 include 'includes/autoLoader.php';
 
+if(!isset($_POST["submit"])){
+    Header("Location: index.php");
+}
+
 if( !isset($_POST["itemTitle"]) &&
     !isset($_POST["itemDescription"]) &&
     !isset($_POST["itemLocation"]) &&

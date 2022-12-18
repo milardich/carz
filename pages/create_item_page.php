@@ -48,7 +48,7 @@
 
             <div class="form-outline mb-4">
                 <label for="exampleFormControlFile1">Upload item images</label>
-                <input type="file" class="form-control-file" id="exampleFormControlFile1" multiple disabled>
+                <input type="file" name="item_images[]" class="form-control-file" id="exampleFormControlFile1" multiple>
             </div>
 
 

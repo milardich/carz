@@ -42,7 +42,7 @@ class ItemHandler{
 
     public function GetAllItems(){
         $items = array();
-        $sql = "SELECT * FROM items";
+        $sql = "SELECT * FROM items ORDER BY item_id DESC";
         $result = Database::Connect()->query($sql);
         if($result->num_rows > 0){
             while($row = $result->fetch_assoc()){

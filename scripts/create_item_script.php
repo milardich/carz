@@ -2,11 +2,9 @@
 include '../includes/autoLoader.php';
 
 if($_SERVER['REQUEST_METHOD'] != 'POST'){
-    /*
     Header("Location: ../index.php");
     exit();
-    */
-    echo "NOT SUBMITTED!";
+    //echo "NOT SUBMITTED!";
 }
 
 if( !isset($_POST["itemTitle"]) &&
@@ -15,8 +13,9 @@ if( !isset($_POST["itemTitle"]) &&
     !isset($_POST["itemPrice"]) &&
     !isset($_FILES["thumbnail_img"])
 ){
-    //Header("Location: ../pages/create_item_page.php?failed=true");
-    echo "EMPTY INPUT FIELDS";
+    Header("Location: ../pages/create_item_page.php?failed=true");
+    exit();
+    //echo "EMPTY INPUT FIELDS";
 }
 else{
     $itemHandler = new ItemHandler();
@@ -48,7 +47,7 @@ else{
         echo "<br>File: " . $_FILES["thumbnail_img"]["name"] . " -> uploaded";
     }
 
-    $itemHandler->SetItemThumbnail("../images/" . $_FILES["thumbnail_img"]["name"]);
+    $itemHandler->SetItemThumbnail("images/" . $_FILES["thumbnail_img"]["name"]);
     
     // upload item images if there are any
     if(isset($_FILES["item_images"])){
@@ -62,14 +61,15 @@ else{
                 echo "<br>File: " . $image["name"] . " -> uploaded.";
 
                 // save to database
-                $imageHandler->SaveImage($uniqueItemId, "../images/" . $image["name"]);
+                $imageHandler->SaveImage($uniqueItemId, "images/" . $image["name"]);
             }
         }
     }
 
     $itemHandler->SaveItem();
     echo "<br> Saved item: ";
-    echo $_POST["itemTitle"] . ": " . $_POST["itemPrice"];   
+    echo $_POST["itemTitle"] . ": " . $_POST["itemPrice"];
+    Header("Location: ../index.php");
 }
 
 function generateRandomString($length = 15){

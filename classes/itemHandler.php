@@ -95,4 +95,19 @@ class ItemHandler{
         }
         return false;
     }
+
+    public function GetItemImages($unique_item_id){
+        $item_images = array();
+        $sql = "SELECT image_url FROM images WHERE unique_item_id = '$unique_item_id' ";
+        $result = Database::Connect()->query($sql);
+        if($result->num_rows > 0){
+            while($row = $result->fetch_assoc()){
+                $item_images[] = array(
+                    'image_url' => $row["image_url"]
+                );
+            }
+            return $item_images;
+        }
+        return "../resources/carz_logo.JPG"; //default img
+    }
 }

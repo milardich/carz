@@ -18,6 +18,7 @@
         $item_id = $_GET["id"];
         $itemHandler = new ItemHandler();
         $item = $itemHandler->GetItemById($item_id);
+        $item_images = $itemHandler->GetItemImages($item["unique_item_id"]);
     ?>
     
     <div class="container">
@@ -38,39 +39,15 @@
 
                 <!-- Small item pics -->
                 <div class="row p-0 m-0 mt-3 item-pictures">
-                    <div class="col-2 item-small-picture m-0 p-0 d-block">
-                        <img src="../images/jaguar_thumbnail.jpg" alt="">
-                    </div>
-                    <div class="col-2 item-small-picture m-0 p-0 d-block">
-                        <img src="../images/jaguar_thumbnail.jpg" alt="">
-                    </div>
-                    <div class="col-2 item-small-picture m-0 p-0 d-block">
-                        <img src="../images/jaguar_thumbnail.jpg" alt="">
-                    </div>
-                    <div class="col-2 item-small-picture m-0 p-0 d-block">
-                        <img src="../images/jaguar_thumbnail.jpg" alt="">
-                    </div>
-                    <div class="col-2 item-small-picture m-0 p-0 d-block">
-                        <img src="../images/jaguar_thumbnail.jpg" alt="">
-                    </div>
-                    <div class="col-2 item-small-picture m-0 p-0 d-block">
-                        <img src="../images/jaguar_thumbnail.jpg" alt="">
-                    </div>
-                    <div class="col-2 item-small-picture m-0 p-0 d-block">
-                        <img src="../images/jaguar_thumbnail.jpg" alt="">
-                    </div>
-                    <div class="col-2 item-small-picture m-0 p-0 d-block">
-                        <img src="../images/jaguar_thumbnail.jpg" alt="">
-                    </div>
-                    <div class="col-2 item-small-picture m-0 p-0 d-block">
-                        <img src="../images/jaguar_thumbnail.jpg" alt="">
-                    </div>
-                    <div class="col-2 item-small-picture m-0 p-0 d-block">
-                        <img src="../images/jaguar_thumbnail.jpg" alt="">
-                    </div>
-                    <div class="col-2 item-small-picture m-0 p-0 d-block">
-                        <img src="../images/jaguar_thumbnail.jpg" alt="">
-                    </div>
+                    <?php
+                        foreach($item_images as $item_image){
+                            ?>
+                            <div class="col-2 item-small-picture m-0 p-0 d-block">
+                                <img src='../<?php echo $item_image["image_url"]; ?>' alt="">
+                            </div>
+                            <?php
+                        }
+                    ?>
                 </div>
             </div>
             

@@ -40,12 +40,14 @@
                 <!-- Small item pics -->
                 <div class="row p-0 m-0 mt-3 item-pictures">
                     <?php
-                        foreach($item_images as $item_image){
-                            ?>
-                            <div class="col-2 item-small-picture m-0 p-0 d-block">
-                                <img src='../<?php echo $item_image["image_url"]; ?>' alt="">
-                            </div>
-                            <?php
+                        if(count($item_images) > 0){
+                            foreach($item_images as $item_image){
+                                ?>
+                                <div class="col-2 item-small-picture m-0 p-0 d-block">
+                                    <img src='../<?php echo $item_image["image_url"]; ?>' alt="">
+                                </div>
+                                <?php
+                            }
                         }
                     ?>
                 </div>

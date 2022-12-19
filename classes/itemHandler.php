@@ -106,8 +106,7 @@ class ItemHandler{
                     'image_url' => $row["image_url"]
                 );
             }
-            return $item_images;
         }
-        return "../resources/carz_logo.JPG"; //default img
+        return $item_images;
     }
 }

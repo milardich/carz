@@ -8,6 +8,11 @@ class ItemHandler{
     private $_itemLocation = "";
     private $_itemPrice = 0.0;
     private $_itemThumbnail = "";
+    private $_uniqueItemId = "";
+
+    public function SetItemUniqueId($id){
+        $this->_uniqueItemId = $id;
+    }
 
     public function SetItemTitle($title){
         $this->_itemTitle = $title;
@@ -31,8 +36,8 @@ class ItemHandler{
 
     public function SaveItem(){
         $current_date = date("Y-m-d");
-        $sql_insert = "INSERT INTO items (item_title, item_description, item_location, item_price, item_thumbnail, item_date_posted) VALUES (
-            '$this->_itemTitle', '$this->_itemDescription', '$this->_itemLocation', '$this->_itemPrice', '$this->_itemThumbnail', '$current_date'
+        $sql_insert = "INSERT INTO items (unique_item_id, item_title, item_description, item_location, item_price, item_thumbnail, item_date_posted) VALUES (
+            '$this->_uniqueItemId', '$this->_itemTitle', '$this->_itemDescription', '$this->_itemLocation', '$this->_itemPrice', '$this->_itemThumbnail', '$current_date'
         )";
         $result = Database::Connect()->query($sql_insert);
         if(!$result){
@@ -48,6 +53,7 @@ class ItemHandler{
             while($row = $result->fetch_assoc()){
                 $items[] = array(
                     'item_id' => $row["item_id"],
+                    'unique_item_id' => $row["unique_item_id"],
                     'item_title' => $row["item_title"],
                     'item_description' => $row["item_description"],
                     'item_location' => $row["item_location"],
@@ -69,6 +75,7 @@ class ItemHandler{
             $row = $result->fetch_assoc();
             $item_data = array(
                 'item_id' => $row["item_id"],
+                'unique_item_id' => $row["unique_item_id"],
                 'item_title' => $row["item_title"],
                 'item_description' => $row["item_description"],
                 'item_location' => $row["item_location"],
@@ -77,7 +84,15 @@ class ItemHandler{
                 'item_date_posted' => $row["item_date_posted"]
             );
         }
-
         return $item_data;
+    }
+
+    public function UniqueIdExists($id){
+        $sql = "SELECT unique_item_id FROM items WHERE unique_item_id = '$id' ";
+        $result = Database::Connect()->query($sql);
+        if($result->num_rows > 0){
+            return true;
+        }
+        return false;
     }
 }

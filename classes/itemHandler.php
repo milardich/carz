@@ -9,6 +9,7 @@ class ItemHandler{
     private $_itemPrice = 0.0;
     private $_itemThumbnail = "";
     private $_uniqueItemId = "";
+    private $_itemSeller = ""; // TODO
 
     public function SetItemUniqueId($id){
         $this->_uniqueItemId = $id;

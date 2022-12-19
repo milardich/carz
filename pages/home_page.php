@@ -81,7 +81,7 @@
                                     <div class="row">
                                         <div class="col-md-6 d-flex">
                                             <div class="d-block mt-auto">
-                                                <object data="location-pin-solid.svg" width="15" height="15"> </object>
+                                                <object data="../resources/location-pin-solid.svg" width="15" height="15"> </object>
                                                 <span class="location-text"><?php echo $item["item_location"]; ?></span>
                                             </div>
                                         </div>
@@ -97,7 +97,7 @@
                             </div>
 
                             <div class="save-button-container" id="<?php echo $item["item_id"]; ?>">
-                                <object data="bookmark-solid.svg" width="30" height="30"> </object>
+                                <object data="../resources/bookmark-solid.svg" width="30" height="30"> </object>
                             </div>
                         </a>
                     </div>

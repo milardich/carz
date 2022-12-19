@@ -4,7 +4,8 @@
     <?php
         include("../includes/html_head.php");
     ?>
-    <title>Carz | Home</title>
+    
+    <title>Carz</title>
 </head>
 <body>
     <?php

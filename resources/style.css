@@ -9,10 +9,7 @@
   height: 40px;
   border-radius: 50%;
   vertical-align: middle;
-}
-
-.img-cover img {
-  object-fit: contain;
+  object-fit: cover;
 }
 
 .filters-container {

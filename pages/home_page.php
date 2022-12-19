@@ -4,6 +4,7 @@
     <?php
         include("../includes/html_head.php");
     ?>
+    <script src="../javascript/filter-cars.js"></script>
     <title>Carz | Home</title>
 </head>
 <body>
@@ -17,7 +18,7 @@
             </div>
             <div class="col-md-4">
                 Car maker
-                <select class="form-select mt-2" aria-label="Default select example">
+                <select class="form-select mt-2" aria-label="Default select example" id="carMakerSelect">
                     <option selected>-</option>
                     <?php
                         $carMakerHandler = new CarMakerHandler();
@@ -32,19 +33,12 @@
             </div>
             <div class="col-md-4">
                 Type
-                <select class="form-select mt-2" aria-label="Default select example">
+                <select class="form-select mt-2" aria-label="Default select example" id="carTypeSelect">
                     <option selected>-</option>
-                    <?php
-                        $carTypes = $carMakerHandler->GetAllTypesFromCarMaker(2);
-                        foreach($carTypes as $carType){
-                            ?>
-                                <option value=<?php echo $carType["car_type_id"]; ?>> <?php echo $carType["car_type"]; ?> </option>
-                            <?php
-                        }
-                    ?>
-                    <option value="1">3 Series</option>
-                    <option value="2">4 Series</option>
-                    <option value="3">5 Series</option>
+                    <!--
+                        Options are filled depending on
+                        selected car maker (using jquery and ajax)
+                    -->
                 </select>
             </div>
             <div class="col-md-3">

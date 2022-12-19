@@ -10,6 +10,16 @@ class ItemHandler{
     private $_itemThumbnail = "";
     private $_uniqueItemId = "";
     private $_itemSeller = ""; // TODO
+    private $_car_maker_id;
+    private $_car_type_id;
+
+    public function SetCarMakerId($car_maker_id){
+        $this->_car_maker_id = $car_maker_id;
+    }
+
+    public function SetCarTypeId($car_type_id){
+        $this->_car_type_id = $car_type_id;
+    }
 
     public function SetItemUniqueId($id){
         $this->_uniqueItemId = $id;
@@ -37,8 +47,8 @@ class ItemHandler{
 
     public function SaveItem(){
         $current_date = date("Y-m-d");
-        $sql_insert = "INSERT INTO items (unique_item_id, item_title, item_description, item_location, item_price, item_thumbnail, item_date_posted) VALUES (
-            '$this->_uniqueItemId', '$this->_itemTitle', '$this->_itemDescription', '$this->_itemLocation', '$this->_itemPrice', '$this->_itemThumbnail', '$current_date'
+        $sql_insert = "INSERT INTO items (unique_item_id, item_title, car_maker_id, car_type_id, item_description, item_location, item_price, item_thumbnail, item_date_posted) VALUES (
+            '$this->_uniqueItemId', '$this->_itemTitle', '$this->_car_maker_id', '$this->_car_type_id', '$this->_itemDescription', '$this->_itemLocation', '$this->_itemPrice', '$this->_itemThumbnail', '$current_date'
         )";
         $result = Database::Connect()->query($sql_insert);
         if(!$result){
@@ -56,6 +66,8 @@ class ItemHandler{
                     'item_id' => $row["item_id"],
                     'unique_item_id' => $row["unique_item_id"],
                     'item_title' => $row["item_title"],
+                    'car_maker_id' => $row["car_maker_id"],
+                    'car_type_id' => $row["car_type_id"],
                     'item_description' => $row["item_description"],
                     'item_location' => $row["item_location"],
                     'item_price' => $row["item_price"],
@@ -70,7 +82,6 @@ class ItemHandler{
     public function GetItemById($id){
         $item_data = array();
         $sql = "SELECT * FROM items WHERE item_id = '$id' ";
-        //$sql = "SELECT * FROM items";
         $result = Database::Connect()->query($sql);
         if($result->num_rows > 0){
             $row = $result->fetch_assoc();
@@ -78,6 +89,8 @@ class ItemHandler{
                 'item_id' => $row["item_id"],
                 'unique_item_id' => $row["unique_item_id"],
                 'item_title' => $row["item_title"],
+                'car_maker_id' => $row["car_maker_id"],
+                'car_type_id' => $row["car_type_id"],
                 'item_description' => $row["item_description"],
                 'item_location' => $row["item_location"],
                 'item_price' => $row["item_price"],

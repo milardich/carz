@@ -46,6 +46,7 @@ $(document).ready(function () {
             maxPrice = 0;
         }
 
+        //fetch filtered items data
         $.ajax({
             url: "../scripts/fetch_filtered_cars.php",
             method: "POST",
@@ -56,9 +57,32 @@ $(document).ready(function () {
                 maxPrice: maxPrice
             },
             success: function (response) {
+                $("#items-container").empty();
                 var filteredItemsJsonData = jQuery.parseJSON(response);
                 filteredItemsJsonData.forEach(element => {
-                    console.log(element.item_title);
+                    //console.log(element.item_title);
+                    //render items with that data
+                    $.ajax({
+                        type: "POST",
+                        url: "../scripts/render_item.php",
+                        data: {
+                            item_id: element.item_id,
+                            unique_item_id: element.unique_item_id,
+                            item_title: element.item_title,
+                            car_maker_id: element.car_maker_id,
+                            car_type_id: element.car_type_id,
+                            item_description: element.item_description,
+                            item_location: element.item_location,
+                            item_price: element.item_price,
+                            item_thumbnail: element.item_thumbnail,
+                            item_date_posted: element.item_date_posted,
+                        },
+                        dataType: "text",
+                        success: function (response) {
+                            console.log(response);
+                            $("#items-container").append(response);
+                        }
+                    });
                 });
             }
         });

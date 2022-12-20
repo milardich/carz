@@ -16,6 +16,10 @@
   padding: 20px;
 }
 
+.container{
+  min-height: 1000px !important;
+}
+
 .items-container {
   padding: 25px;
 }

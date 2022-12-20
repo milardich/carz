@@ -123,4 +123,52 @@ class ItemHandler{
         }
         return $item_images;
     }
+
+    public function GetFilteredItems($car_maker_id, $car_type_id, $min_price, $max_price, $order_by = "ASC"){
+        $items = array();
+        $sql = "SELECT * FROM items";
+        if($car_maker_id != "-"){
+            $sql .= " WHERE car_maker_id = $car_maker_id";
+        }
+        if($car_type_id != "-" && $car_maker_id != "-"){
+            $sql .= " AND car_type_id = $car_type_id";
+        }
+        if($min_price > 0){
+            if($car_maker_id != "-" || $car_type_id != "-"){
+                $sql .= " AND item_price > $min_price";
+            }
+            else{
+                $sql .= " WHERE item_price > $min_price";
+            }
+        }
+        if($max_price > 0 && $max_price > $min_price){
+            if($car_maker_id != "-" || $car_type_id != "-"){
+                $sql .= " AND item_price < $max_price";
+            }
+            else{
+                $sql .= " WHERE item_price < $max_price";
+            }
+        }
+        $sql .= " ORDER BY item_price $order_by";
+        echo ">> " . $sql . "<br><br>";
+        //$sql = "SELECT * FROM items WHERE car_maker_id = '$car_maker_id' AND car_type_id = '$car_type_id' AND item_price BETWEEN '$min_price' AND '$max_price'";
+        $result = Database::Connect()->query($sql);
+        if($result->num_rows > 0){
+            while($row = $result->fetch_assoc()){
+                $items[] = array(
+                    'item_id' => $row["item_id"],
+                    'unique_item_id' => $row["unique_item_id"],
+                    'item_title' => $row["item_title"],
+                    'car_maker_id' => $row["car_maker_id"],
+                    'car_type_id' => $row["car_type_id"],
+                    'item_description' => $row["item_description"],
+                    'item_location' => $row["item_location"],
+                    'item_price' => $row["item_price"],
+                    'item_thumbnail' => $row["item_thumbnail"],
+                    'item_date_posted' => $row["item_date_posted"]
+                );
+            }
+        }
+        return $items;
+    }
 }

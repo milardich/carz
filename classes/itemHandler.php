@@ -135,22 +135,22 @@ class ItemHandler{
         }
         if($min_price > 0){
             if($car_maker_id != "-" || $car_type_id != "-"){
-                $sql .= " AND item_price > $min_price";
+                $sql .= " AND item_price >= $min_price";
             }
             else{
-                $sql .= " WHERE item_price > $min_price";
+                $sql .= " WHERE item_price >= $min_price";
             }
         }
         if($max_price > 0 && $max_price > $min_price){
-            if($car_maker_id != "-" || $car_type_id != "-"){
-                $sql .= " AND item_price < $max_price";
+            if($car_maker_id != "-" || $car_type_id != "-" || $min_price > 0){
+                $sql .= " AND item_price <= $max_price";
             }
             else{
-                $sql .= " WHERE item_price < $max_price";
+                $sql .= " WHERE item_price <= $max_price";
             }
         }
         $sql .= " ORDER BY item_price $order_by";
-        echo ">> " . $sql . "<br><br>";
+        //echo ">> " . $sql . "<br><br>";
         //$sql = "SELECT * FROM items WHERE car_maker_id = '$car_maker_id' AND car_type_id = '$car_type_id' AND item_price BETWEEN '$min_price' AND '$max_price'";
         $result = Database::Connect()->query($sql);
         if($result->num_rows > 0){

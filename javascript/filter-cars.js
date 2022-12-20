@@ -56,7 +56,10 @@ $(document).ready(function () {
                 maxPrice: maxPrice
             },
             success: function (response) {
-
+                var filteredItemsJsonData = jQuery.parseJSON(response);
+                filteredItemsJsonData.forEach(element => {
+                    console.log(element.item_title);
+                });
             }
         });
     });

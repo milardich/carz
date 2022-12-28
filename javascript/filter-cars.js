@@ -81,7 +81,8 @@ $(document).ready(function () {
                         success: function (response) {
                             console.log(response);
                             $("#items-container").append(response);
-                        }
+                        },
+                        async: false
                     });
                 });
             }

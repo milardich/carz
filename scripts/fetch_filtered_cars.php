@@ -26,7 +26,7 @@ if(!isset($_POST["maxPrice"])){
 
 $itemHandler = new ItemHandler();
 $filteredItems = $itemHandler->GetFilteredItems($carMakerId, $carTypeId, $minPrice, $maxPrice, "ASC");
-//$filteredItems = $itemHandler->GetFilteredItems("-", "-", 10, 100, "ASC");
+//$filteredItems = $itemHandler->GetFilteredItems("-", "-", 1, 400, "ASC");
 
 $jsonFilteredItems = json_encode($filteredItems);
 //var_dump($jsonFilteredItems);

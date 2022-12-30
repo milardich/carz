@@ -25,7 +25,7 @@
             <div class="row">
                 <div class="col-md-6 col-sm-12">
                     Car maker
-                    <select class="form-select mt-2" aria-label="Default select example" id="carMakerSelect">
+                    <select class="form-select mt-2" aria-label="Default select example" id="carMakerSelect" name="carMaker">
                         <option selected>-</option>
                         <?php
                             $carMakerHandler = new CarMakerHandler();
@@ -40,7 +40,7 @@
                 </div>
                 <div class="col-md-6 col-sm-12">
                     Type
-                    <select class="form-select mt-2" aria-label="Default select example" id="carTypeSelect">
+                    <select class="form-select mt-2" aria-label="Default select example" id="carTypeSelect" name="carType">
                         <option selected>-</option>
                         <!--
                             Options are filled depending on

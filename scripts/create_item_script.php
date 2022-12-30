@@ -25,6 +25,10 @@ else{
     $itemHandler->SetItemDescription($_POST["itemDescription"]);
     $itemHandler->SetItemLocation($_POST["itemLocation"]);
     $itemHandler->SetItemPrice($_POST["itemPrice"]);
+    if(isset($_POST["carMaker"]))
+        $itemHandler->SetCarMakerId($_POST["carMaker"]);
+    if(isset($_POST["carType"]))
+        $itemHandler->SetCarTypeId($_POST["carType"]);
 
     // generate and check unique item id
     $uniqueItemId = "";

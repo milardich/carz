@@ -98,6 +98,9 @@ class ItemHandler{
                 'item_date_posted' => $row["item_date_posted"]
             );
         }
+        else{
+            Header("Location: ../index.php");
+        }
         return $item_data;
     }
 

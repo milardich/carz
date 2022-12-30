@@ -88,4 +88,42 @@ $(document).ready(function () {
             }
         });
     });
+
+
+    /*
+    * Display all items without filters
+    */
+    $.ajax({
+        url: "../scripts/fetch_all_cars.php",
+        method: "POST",
+        success: function (response) {
+            $("#items-container").empty();
+            var filteredItemsJsonData = jQuery.parseJSON(response);
+            filteredItemsJsonData.forEach(element => {
+                //render items 
+                $.ajax({
+                    type: "POST",
+                    url: "../scripts/render_item.php",
+                    data: {
+                        item_id: element.item_id,
+                        unique_item_id: element.unique_item_id,
+                        item_title: element.item_title,
+                        car_maker_id: element.car_maker_id,
+                        car_type_id: element.car_type_id,
+                        item_description: element.item_description,
+                        item_location: element.item_location,
+                        item_price: element.item_price,
+                        item_thumbnail: element.item_thumbnail,
+                        item_date_posted: element.item_date_posted,
+                    },
+                    dataType: "text",
+                    success: function (response) {
+                        console.log(response);
+                        $("#items-container").append(response);
+                    },
+                    async: false
+                });
+            });
+        }
+    });
 });

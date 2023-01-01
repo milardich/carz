@@ -23,7 +23,7 @@ else{
 
         // change img name
         $img_name = $_FILES["profilePicture"]["name"];
-        $_FILES["profilePicture"]["name"] = date("Y-m-d") . "_" . $img_name . "_" . $_POST["username"];
+        $_FILES["profilePicture"]["name"] = date("Y-m-d") . "_" . $_POST["username"] . "_" . $img_name;
         echo  "new name: " . $_FILES["profilePicture"]["name"];
 
         // upload thumbnail image

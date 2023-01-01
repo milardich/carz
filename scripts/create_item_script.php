@@ -1,5 +1,6 @@
 <?php
 include '../includes/autoLoader.php';
+session_start();
 
 if($_SERVER['REQUEST_METHOD'] != 'POST'){
     Header("Location: ../index.php");
@@ -70,6 +71,7 @@ else{
         }
     }
 
+    $itemHandler->SetItemSellerId($_SESSION["LOGGED_IN_USER_ID"]);
     $itemHandler->SaveItem();
     echo "<br> Saved item: ";
     echo $_POST["itemTitle"] . ": " . $_POST["itemPrice"];

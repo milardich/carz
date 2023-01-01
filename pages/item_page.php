@@ -20,6 +20,7 @@
         $itemHandler = new ItemHandler();
         $item = $itemHandler->GetItemById($item_id);
         $item_images = $itemHandler->GetItemImages($item["unique_item_id"]);
+        $userHandler = new User();
     ?>
     
     <div class="container">
@@ -78,7 +79,8 @@
                 <div class="seller-info-box">
                     <span class="text-secondary">Seller: </span> 
                     <div class="d-inline-block">
-                        John Doe
+                        <?php echo $userHandler->GetUserDataById($item["seller_id"])["username"];
+                        ?>
                     </div>
                 </div>
                 <div class="seller-info-box">
@@ -90,7 +92,15 @@
                 <div class="seller-info-box">
                     <span class="text-secondary">Phone: </span> 
                     <div class="d-inline-block">
-                        09921312388
+                        <?php echo $userHandler->GetUserDataById($item["seller_id"])["user_phone"];
+                        ?>
+                    </div>
+                </div>
+                <div class="seller-info-box">
+                    <span class="text-secondary">Email: </span> 
+                    <div class="d-inline-block">
+                        <?php echo $userHandler->GetUserDataById($item["seller_id"])["user_email"];
+                        ?>
                     </div>
                 </div>
             </div>

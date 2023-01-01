@@ -12,6 +12,11 @@ class ItemHandler{
     private $_itemSeller = ""; // TODO
     private $_car_maker_id;
     private $_car_type_id;
+    private $_item_seller_id;
+
+    public function SetItemSellerId($id){
+        $this->_item_seller_id = $id;
+    }
 
     public function SetCarMakerId($car_maker_id){
         $this->_car_maker_id = $car_maker_id;
@@ -47,8 +52,8 @@ class ItemHandler{
 
     public function SaveItem(){
         $current_date = date("Y-m-d");
-        $sql_insert = "INSERT INTO items (unique_item_id, item_title, car_maker_id, car_type_id, item_description, item_location, item_price, item_thumbnail, item_date_posted) VALUES (
-            '$this->_uniqueItemId', '$this->_itemTitle', '$this->_car_maker_id', '$this->_car_type_id', '$this->_itemDescription', '$this->_itemLocation', '$this->_itemPrice', '$this->_itemThumbnail', '$current_date'
+        $sql_insert = "INSERT INTO items (unique_item_id, item_title, car_maker_id, car_type_id, item_description, item_location, item_price, item_thumbnail, item_date_posted, seller_id) VALUES (
+            '$this->_uniqueItemId', '$this->_itemTitle', '$this->_car_maker_id', '$this->_car_type_id', '$this->_itemDescription', '$this->_itemLocation', '$this->_itemPrice', '$this->_itemThumbnail', '$current_date', '$this->_item_seller_id'
         )";
         $result = Database::Connect()->query($sql_insert);
         if(!$result){
@@ -72,7 +77,8 @@ class ItemHandler{
                     'item_location' => $row["item_location"],
                     'item_price' => $row["item_price"],
                     'item_thumbnail' => $row["item_thumbnail"],
-                    'item_date_posted' => $row["item_date_posted"]
+                    'item_date_posted' => $row["item_date_posted"],
+                    'seller_id' => $row["seller_id"]
                 );
             }
         }
@@ -95,7 +101,8 @@ class ItemHandler{
                 'item_location' => $row["item_location"],
                 'item_price' => $row["item_price"],
                 'item_thumbnail' => $row["item_thumbnail"],
-                'item_date_posted' => $row["item_date_posted"]
+                'item_date_posted' => $row["item_date_posted"],
+                'seller_id' => $row["seller_id"]
             );
         }
         else{
@@ -168,7 +175,8 @@ class ItemHandler{
                     'item_location' => $row["item_location"],
                     'item_price' => $row["item_price"],
                     'item_thumbnail' => $row["item_thumbnail"],
-                    'item_date_posted' => $row["item_date_posted"]
+                    'item_date_posted' => $row["item_date_posted"],
+                    'seller_id' => $row["seller_id"]
                 );
             }
         }

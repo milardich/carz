@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 19, 2022 at 01:04 AM
+-- Generation Time: Jan 01, 2023 at 05:50 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
 
@@ -93,12 +93,31 @@ CREATE TABLE `images` (
 
 INSERT INTO `images` (`image_id`, `unique_item_id`, `image_url`, `user_id`) VALUES
 (1, NULL, 'images/nature.JPG', 2),
-(17, 'VmTLvB', '../images/VmTLvB-Y-4DJi_car1.jpg', 0),
-(18, 'VmTLvB', '../images/VmTLvB-QvF3oY_car2.jpg', 0),
-(19, 'VmTLvB', '../images/VmTLvB-MxjP92_car3.jpg', 0),
-(20, 'KiRvkQ', '../images/KiRvkQ-lVH1it_car1.jpg', 0),
-(21, 'KiRvkQ', '../images/KiRvkQ-Rcsoid_car2.jpg', 0),
-(22, 'KiRvkQ', '../images/KiRvkQ-QUcyng_car3.jpg', 0);
+(23, 'qeLeEE', 'images/qeLeEE-vEzLiF_car1.jpg', 0),
+(24, 'qeLeEE', 'images/qeLeEE-YCm_fM_car2.jpg', 0),
+(25, 'qeLeEE', 'images/qeLeEE-jfA2Fz_car3.jpg', 0),
+(26, '342cok', 'images/342cok-z7WfxI_car1.jpg', 0),
+(27, '342cok', 'images/342cok-vaN1WY_car2.jpg', 0),
+(28, '342cok', 'images/342cok-zi6-cl_car3.jpg', 0),
+(29, '_HaTag', 'images/_HaTag-kNbuIO_car1.jpg', 0),
+(30, '_HaTag', 'images/_HaTag-vUgRxR_car2.jpg', 0),
+(31, '_HaTag', 'images/_HaTag-VQLNpN_car3.jpg', 0),
+(32, 'oQzfF5', 'images/oQzfF5-kxqwFI_car1.jpg', 0),
+(33, 'oQzfF5', 'images/oQzfF5-qfOzQk_car2.jpg', 0),
+(34, 'oQzfF5', 'images/oQzfF5-v0kJ8R_car3.jpg', 0),
+(35, 'oQzfF5', 'images/oQzfF5-jMiEfx_soyjack1233213.jpg', 0),
+(36, 'oQzfF5', 'images/oQzfF5-iUAlrx_vwpolo.jpg', 0),
+(37, 'Eha5MZ', 'images/Eha5MZ-k5y3ba_astra2.jpg', 0),
+(38, 'Eha5MZ', 'images/Eha5MZ-YUeXO2_astra3.jpg', 0),
+(39, 'Eha5MZ', 'images/Eha5MZ-bw58oG_astra4.jpg', 0),
+(40, 'kxEs2j', 'images/kxEs2j-Mwz-1v_astra3.jpg', 0),
+(41, 'kxEs2j', 'images/kxEs2j-Fzgy2O_astra4.jpg', 0),
+(42, 'kxEs2j', 'images/kxEs2j-5wCilx_bmw52.jpg', 0),
+(43, 'kxEs2j', 'images/kxEs2j-tyCH3J_car2.jpg', 0),
+(44, 'kxEs2j', 'images/kxEs2j-KvilnG_car3.jpg', 0),
+(45, 'E1Dtu1', 'images/E1Dtu1-uJoOcX_car2.jpg', 0),
+(46, 'E1Dtu1', 'images/E1Dtu1-13NMXB_corsa1.jpg', 0),
+(47, 'E1Dtu1', 'images/E1Dtu1-I415TI_corsa2.jpg', 0);
 
 -- --------------------------------------------------------
 
@@ -109,61 +128,35 @@ INSERT INTO `images` (`image_id`, `unique_item_id`, `image_url`, `user_id`) VALU
 CREATE TABLE `items` (
   `item_id` int(11) NOT NULL,
   `unique_item_id` varchar(6) NOT NULL DEFAULT current_timestamp(),
-  `item_title` varchar(20) DEFAULT NULL,
+  `item_title` varchar(50) DEFAULT NULL,
+  `car_maker_id` int(11) DEFAULT NULL,
+  `car_type_id` int(11) DEFAULT NULL,
   `item_description` text DEFAULT NULL,
   `item_location` varchar(50) DEFAULT NULL,
   `item_price` float DEFAULT NULL,
   `item_thumbnail` text DEFAULT NULL,
-  `item_date_posted` date NOT NULL
+  `item_date_posted` date NOT NULL,
+  `seller_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `items`
 --
 
-INSERT INTO `items` (`item_id`, `unique_item_id`, `item_title`, `item_description`, `item_location`, `item_price`, `item_thumbnail`, `item_date_posted`) VALUES
-(15, '2022-1', 'Renault Megane', 'testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest', 'Osijek', 5988, 'images/d4MJijkGdFKfsCUrenault-megane-4-dci-2017-slika-168827466.jpg', '2022-12-09'),
-(16, '2022-1', 'BMW F30', 'bmw f30 test description 1 2 3bmw f30 test description 1 2 3bmw f30 test description 1 2 3bmw f30 test description 1 2 3bmw f30 test description 1 2 3bmw f30 test description 1 2 3bmw f30 test description 1 2 3', 'Vinkovci', 8900, 'images/JtegwLJAFxJ-cqo3090_115.jpeg', '2022-12-09'),
-(17, '2022-1', 'wewerwer', 'werrweewrerw', 'erwrewwer', 0, 'images/37zx_VANUFVM93tbolje carz.JPG', '2022-12-12'),
-(18, '2022-1', 'VW neki', 'test test test test test test test test test test test test test test test test test ', 'Zagreb', 12331, 'images/pG2iJFVTPOCHSaevwpolo.jpg', '2022-12-18'),
-(19, '2022-1', 'vw', 'qweqwewqqewwe', 'Zagreb', 12331, 'images/PLpqNZKIULgWUvevwpolo.jpg', '2022-12-18'),
-(20, '2022-1', 'VW NOVO', 'qweiqiewuqwieuyiquweyiuy', 'ewqee', 132, 'images/CQAIa8hgMn2pItFvwpolo.jpg', '2022-12-18'),
-(21, '2022-1', 'k', 'r', 'ee', 5, 'images/LcqDHCLMaNwUgBosoyjack1233213.jpg', '2022-12-18'),
-(22, '2022-1', 'q', 'q', 'q', 4, 'images/_HODce69rkmma7J3090_115.jpeg', '2022-12-18'),
-(23, '2022-1', 't', 't', 't', 33, 'images/L6JROvm3EMS1wfevwpolo.jpg', '2022-12-18'),
-(24, '2022-1', 'w', 'w', 'w', 0, 'images/d7majl0gDMy3slxvwpolo.jpg', '2022-12-18'),
-(25, '2022-1', 'r', 'r', 'r', 2, 'images/Zp8n8N5hY-iYp4Vcar3.jpg', '2022-12-18'),
-(26, '2022-1', 'r', 'r', 'r', 2, 'images/WrjNlrq1WJqwveDcar3.jpg', '2022-12-18'),
-(27, '2022-1', 'r', 'r', 'r', 2, 'images/7fBuUANuovzbTBvcar3.jpg', '2022-12-18'),
-(28, '2022-1', 'r', 'r', 'r', 2, 'images/Z9qqyqW4GZE2CIGcar3.jpg', '2022-12-18'),
-(29, '2022-1', 'r', 'r', 'r', 3, 'images/Aip0J1t6FR7Q3TVcar3.jpg', '2022-12-18'),
-(30, '2022-1', 'r', 'r', 'r', 3, 'images/QVJnfe7v8cptw2gcar3.jpg', '2022-12-18'),
-(31, '2022-1', 'r', 'r', 'r', 3, 'images/pYBchfWaQx-bHpEcar3.jpg', '2022-12-18'),
-(32, '2022-1', 'r', 'r', 'r', 3, 'images/i4jua-xfvhaJyAdcar3.jpg', '2022-12-18'),
-(33, '2022-1', 'r', 'r', 'r', 3, 'images/G_1tE1jxnNM7zwkcar3.jpg', '2022-12-18'),
-(34, '2022-1', 'r', 'r', 'r', 3, 'images/5Z9GbpdDEkMTZ0Ycar3.jpg', '2022-12-18'),
-(35, '2022-1', 'r', 'r', 'r', 3, 'images/fxl9s2463uQ6nOycar3.jpg', '2022-12-18'),
-(36, '2022-1', 'r', 'r', 'r', 3, 'images/ZJ4kYoG8u76gsamcar3.jpg', '2022-12-18'),
-(37, '2022-1', 'r', 'r', 'r', 3, 'images/yX7Pf6iOyrzkhJZcar3.jpg', '2022-12-18'),
-(38, '2022-1', 'rrrr', 'qqqq', 'wwww', 5555, 'images/FqYIATanZKD2-lfL6JROvm3EMS1wfevwpolo_2.jpg', '2022-12-18'),
-(39, '2022-1', 'r', 'r', 'r', 3, 'images/G_MFygcw3yF6AyXcar2.jpg', '2022-12-18'),
-(40, '2022-1', 'r', 'r', 'r', 2, 'images/o7ju4yhBbwoFO6Ncar3.jpg', '2022-12-18'),
-(41, '2022-1', 'r', 'r', 'r', 2, 'images/5qGcdGB7lweWy6scar3.jpg', '2022-12-18'),
-(42, '2022-1', 'r', 'r', 'r', 2, 'images/3QIymuQnAw8UT9scar3.jpg', '2022-12-18'),
-(43, '2022-1', 'Bugatti', 'qwewqer', 'Osijek', 123, 'images/iyjyzqfESDzX_Uecar3.jpg', '2022-12-18'),
-(44, '2022-1', 'Bugatti', 'qwewqer', 'Osijek', 123, 'images/uCIg_D7JLCZPmRWcar3.jpg', '2022-12-18'),
-(45, '2022-1', 'Bugatti', 'qwewqer', 'Osijek', 123, 'images/t4x-HLSdyi1poI8car3.jpg', '2022-12-18'),
-(46, '2022-1', 'Bugatti', 'qwewqer', 'Osijek', 123, 'images/lUiXBGxTBFGwLOIcar3.jpg', '2022-12-18'),
-(47, '2022-1', 'r', 'r', 'r', 3, 'images/JJ3GHEwrrcQqvBJcar2.jpg', '2022-12-18'),
-(48, '2022-1', 'tt', 't', 't', 0, 'images/NKFZb8FQHuuI4ypcar1.jpg', '2022-12-18'),
-(49, '2022-1', 'rt', 'r', 'r', 0, 'images/6uuMkmz_cAt7oNicar3.jpg', '2022-12-18'),
-(50, '2022-1', 'r', 'r', 'r', 0, 'images/DxWuNj0N6e3wd-hcar3.jpg', '2022-12-18'),
-(51, '2022-1', 'TEST1', 'test 1', 'test1', 123, '../images/P9U1Ec-car2.jpg', '2022-12-19'),
-(52, '2022-1', 'TEST1', 'test 1', 'test1', 123, '../images/WYgIP--car2.jpg', '2022-12-19'),
-(53, 'MCcDSq', 'rrrrrrr', 'rwwww', 'www', 0, '../images/MCcDSq-car3.jpg', '2022-12-19'),
-(54, 'Ry4dvb', 'rrrrrrr', 'rwwww', 'www', 0, '../images/Ry4dvb-car3.jpg', '2022-12-19'),
-(55, 'VmTLvB', 'rrrrrrr', 'rwwww', 'www', 0, '../images/VmTLvB-car3.jpg', '2022-12-19'),
-(56, 'KiRvkQ', 'rrrrrrr', 'rwwww', 'www', 0, '../images/KiRvkQ-car3.jpg', '2022-12-19');
+INSERT INTO `items` (`item_id`, `unique_item_id`, `item_title`, `car_maker_id`, `car_type_id`, `item_description`, `item_location`, `item_price`, `item_thumbnail`, `item_date_posted`, `seller_id`) VALUES
+(59, '_HaTag', 'test 1', 1, 2, 'test 1test 1test 1test 1test 1test 1test 1test 1test 1test 1test 1test 1test 1test 1test 1test 1test 1test 1test 1test 1test 1test 1test 1test 1test 1', 'Osijek', 132, 'images/_HaTag-car3.jpg', '2022-12-19', 0),
+(60, 'oQzfF5', 'Vw ', 2, 1, 'qweqwe wqe', 'qewqew', 12, 'images/oQzfF5-L6JROvm3EMS1wfevwpolo_2.jpg', '2022-12-19', 0),
+(61, 'G_Uzje', 'samo thumbnail', 3, 3, 'samo thumbnailsamo thumbnailsamo thumbnailsamo thumbnailsamo thumbnailsamo thumbnail', 'samo thumbnail', 1, 'images/G_Uzje-soyjack1233213.jpg', '2022-12-19', 0),
+(62, 'Eha5MZ', 'Test car 322', 0, 0, 'Testset lkestjlsketj l tjeslj tlesj tlsejt lsekjtlse tjlkj', 'Jankovci', 992, 'images/Eha5MZ-astra.jpg', '2022-12-30', 0),
+(64, 'kxEs2j', 'BMW 5 Series', 0, 0, 'ajkldlakdjsl', 'asda', 0, 'images/kxEs2j-bmw51.webp', '2022-12-30', 0),
+(67, 'fO5LsH', 'Valjd radi - Volkswa', 4, 10, 'qqqqqqqqqqq', 'Osijek', 1112, 'images/fO5LsH-tiguan.jpg', '2022-12-30', 0),
+(68, 'Gwwa--', 'BMW 3 Series F10', 1, 1, 'pali vozi', 'Vinkovci', 12411, 'images/Gwwa---f10.jpg', '2022-12-30', 0),
+(69, 'E1Dtu1', 'Opel Corsa', 3, 9, 'Corsa hehe Corsa hehe Corsa hehe Corsa hehe Corsa hehe Corsa hehe Corsa hehe Corsa hehe Corsa hehe Corsa hehe Corsa hehe Corsa hehe Corsa hehe Corsa hehe Corsa hehe Corsa hehe Corsa hehe Corsa hehe Corsa hehe Corsa hehe Corsa hehe Corsa hehe ', 'Osijek', 19998, 'images/E1Dtu1-corsa1.jpg', '2023-01-01', 0),
+(70, 'N0j5ey', 'Opel Insignia', 3, 7, '', '', 0, 'images/N0j5ey-astra.jpg', '2023-01-01', 0),
+(71, 'Rz6f43', 'BMW 7 Series', 1, 3, '', '', 0, 'images/Rz6f43-', '2023-01-01', 2),
+(72, 'dg6OrK', 'Toyota Yaris', 2, 6, '', '', 0, 'images/dg6OrK-', '2023-01-01', 2),
+(73, 'b7zPU2', 'rqrqwrqwrwq', 0, 0, '', '', 0, 'images/b7zPU2-', '2023-01-01', 1),
+(74, '7oq-0W', 'Opel Insignia', 3, 7, '', '', 0, 'images/7oq-0W-', '2023-01-01', 3);
 
 -- --------------------------------------------------------
 
@@ -187,16 +180,19 @@ CREATE TABLE `users` (
   `user_email` varchar(50) DEFAULT NULL,
   `user_password` varchar(50) DEFAULT NULL,
   `username` varchar(50) DEFAULT NULL,
-  `profile_picture_url` text DEFAULT NULL
+  `profile_picture_url` text DEFAULT NULL,
+  `user_phone` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`user_id`, `user_email`, `user_password`, `username`, `profile_picture_url`) VALUES
-(1, 'admin@admin', 'admin', 'admin', NULL),
-(2, 'stjepan@stjepan.com', 'stjepan', 'stjepan', 'images/nature.JPG');
+INSERT INTO `users` (`user_id`, `user_email`, `user_password`, `username`, `profile_picture_url`, `user_phone`) VALUES
+(1, 'admin@admin', 'admin', 'admin', NULL, '4444444'),
+(2, 'stjepan@stjepan.com', 'stjepan', 'stjepan', 'images/nature.JPG', '099123123'),
+(9, 'q@q', 'q', 'q', 'images/2023-01-01_astra2.jpg_q', 'q'),
+(10, 'ee@ee', 'ee', 'ee', 'images/2023-01-01_ee_corsa1.jpg', '123');
 
 --
 -- Indexes for dumped tables
@@ -252,19 +248,19 @@ ALTER TABLE `car_types`
 -- AUTO_INCREMENT for table `images`
 --
 ALTER TABLE `images`
-  MODIFY `image_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `image_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
 -- AUTO_INCREMENT for table `items`
 --
 ALTER TABLE `items`
-  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=75;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -18,7 +18,7 @@
             <!-- Email input -->
             <div class="form-outline mb-4">
                 <label class="form-label" for="form2Example1">Email address</label>
-                <input type="email" id="form2Example1" class="form-control" name="email"/>
+                <input type="email" id="form2Example1" class="form-control" name="email" autofocus/>
             </div>
 
             <!-- Password input -->

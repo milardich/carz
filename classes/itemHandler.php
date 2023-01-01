@@ -9,7 +9,6 @@ class ItemHandler{
     private $_itemPrice = 0.0;
     private $_itemThumbnail = "";
     private $_uniqueItemId = "";
-    private $_itemSeller = ""; // TODO
     private $_car_maker_id;
     private $_car_type_id;
     private $_item_seller_id;

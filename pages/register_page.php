@@ -14,36 +14,40 @@
         <div class="text-center mt-5 text-secondary">
             Registration page
         </div>
-        <form class="form-container">
+        <form class="form-container" enctype="multipart/form-data" action="../scripts/register_script.php" method="POST">
+
             <div class="form-outline mb-4">
-                <input type="text" id="form2Example1" class="form-control" />
-                <label class="form-label" for="form2Example1">First name</label>
+                <input type="text" id="form2Example1" class="form-control" name="username"/>
+                <label class="form-label" for="form2Example1">Username</label>
             </div>
+
             <div class="form-outline mb-4">
-                <input type="text" id="form2Example1" class="form-control" />
-                <label class="form-label" for="form2Example1">Last name</label>
+                <input type="text" id="form2Example1" class="form-control" name="phone"/>
+                <label class="form-label" for="form2Example1">Phone number</label>
             </div>
+
             <!-- Email input -->
             <div class="form-outline mb-4">
-                <input type="email" id="form2Example1" class="form-control" />
+                <input type="email" id="form2Example1" class="form-control" name="email"/>
                 <label class="form-label" for="form2Example1">Email address</label>
             </div>
 
             <!-- Password input -->
             <div class="form-outline mb-4">
-                <input type="password" id="form2Example2" class="form-control" />
+                <input type="password" id="form2Example2" class="form-control" name="password"/>
                 <label class="form-label" for="form2Example2">Password</label>
             </div>
             <div class="form-outline mb-4">
-                <input type="password" id="form2Example2" class="form-control" />
+                <input type="password" id="form2Example2" class="form-control"/>
                 <label class="form-label" for="form2Example2">Confirm password</label>
             </div>
             <div class="form-outline mb-4">
-                <input type="file" id="form2Example2" class="form-control-file" />
+                <input type="file" id="form2Example2" class="form-control-file" name="profilePicture"/>
                 <label class="form-label" for="form2Example2">Choose a profile picture</label>
             </div>
+
             <!-- Submit button -->
-            <button type="button" class="btn btn-primary mb-4 full-width-button">Register</button>
+            <button type="submit" class="btn btn-primary mb-4 full-width-button">Register</button>
 
             <!-- Register buttons -->
             <div class="text-center">

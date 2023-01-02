@@ -33,6 +33,15 @@ class User { // mby change this to UserHandler
                 'user_phone' => $row["user_phone"]
             );
         }
+        else{
+            $user_data = array(
+                'user_id' => "-",
+                'user_email' => "-",
+                'username' => "-",
+                'profile_picture_url' => "-",
+                'user_phone' => "-"
+            );
+        }
         return $user_data;
     }
 }

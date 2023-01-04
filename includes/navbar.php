@@ -32,7 +32,7 @@
                             <span class="nav-small-dropdown-arrow">▼</span>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end profile-dropdown" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><a class="dropdown-item" href="../pages/profile_page.php">Profile</a></li>
                             <li><a class="dropdown-item" href="#">Saved items (12)</a></li>
                             <li><a class="dropdown-item" href="create_item_page.php">Add new item</a></li>
                             <li><hr class="dropdown-divider"></li>

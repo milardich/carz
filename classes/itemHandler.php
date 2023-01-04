@@ -181,4 +181,28 @@ class ItemHandler{
         }
         return $items;
     }
+
+    public function GetItemsFromUser($user_id){
+        $items = array();
+        $sql = "SELECT * FROM items WHERE seller_id = '$user_id'";
+        $result = Database::Connect()->query($sql);
+        if($result->num_rows > 0){
+            while($row = $result->fetch_assoc()){    
+                $items[] = array(
+                    'item_id' => $row["item_id"],
+                    'unique_item_id' => $row["unique_item_id"],
+                    'item_title' => $row["item_title"],
+                    'car_maker_id' => $row["car_maker_id"],
+                    'car_type_id' => $row["car_type_id"],
+                    'item_description' => $row["item_description"],
+                    'item_location' => $row["item_location"],
+                    'item_price' => $row["item_price"],
+                    'item_thumbnail' => $row["item_thumbnail"],
+                    'item_date_posted' => $row["item_date_posted"],
+                    'seller_id' => $row["seller_id"]
+                );
+            }
+        }
+        return $items;
+    }
 }

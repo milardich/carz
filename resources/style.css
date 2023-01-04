@@ -186,15 +186,15 @@ a {
 }
 
 .user-profile-picture{
-  width: 300px;
+  width: 350px;
   height: 300px;
-  object-fit: cover;
   border: 1px solid green;
 }
 
 .user-profile-picture img{
   width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 
 .user-info-text{

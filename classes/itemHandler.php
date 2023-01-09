@@ -214,4 +214,13 @@ class ItemHandler{
         }
         return false;
     }
+
+    public function DeleteItem($item_id){
+        $sql = "DELETE FROM items WHERE item_id = '$item_id'";
+        $result = Database::Connect()->query($sql);
+        if($result){
+            return true;
+        }
+        return false;
+    }
 }

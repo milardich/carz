@@ -54,4 +54,18 @@ $(document).ready(function () {
             }
         });
     });
+
+    $("#deleteButton").click(function () {
+        var itemId = new URLSearchParams(window.location.search).get("id");
+        $.ajax({
+            url: "../scripts/delete_item_script.php",
+            method: "GET",
+            data: {
+                itemId: itemId
+            },
+            success: function (response) {
+                location.href = "profile_page.php";
+            }
+        });
+    });
 });

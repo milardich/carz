@@ -40,10 +40,10 @@ $(document).ready(function () {
             },
             success: function (response) {
                 var newData = jQuery.parseJSON(response);
-                console.log(newData.itemId);
-                console.log(newData.newTitle);
-                console.log(newData.newDescription);
-                console.log(newData.newPrice);
+                //console.log(newData.itemId);
+                //console.log(newData.newTitle);
+                //console.log(newData.newDescription);
+                //console.log(newData.newPrice);
                 $(".itemProperty").show();
                 $(".editInputFieldContainer").hide();
                 $(".modify-button").hide();

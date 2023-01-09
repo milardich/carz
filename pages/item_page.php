@@ -6,6 +6,7 @@
     ?>
     
     <title>Carz</title>
+    <script src="../javascript/edit-delete-item.js"></script>
 </head>
 <body>
     <?php
@@ -54,19 +55,45 @@
                     ?>
                 </div>
             </div>
-            
+            <div>
+                <?php if($item["seller_id"] == $_SESSION["LOGGED_IN_USER_ID"]){ ?>
+                        <button class="btn btn-primary" id="editButton"> Edit </button>
+                        <button class="btn btn-success modify-button" id="saveButton"> Save </button>
+                        <button class="btn btn-secondary modify-button" id="cancelButton"> Cancel </button>
+                        <button class="btn btn-danger modify-button" id="deleteButton"> Delete </button>
+                <?php } ?>
+            </div>
             <div class="item-info-container p-2 mt-3">
-                <div class="item-title">
+                <!--  -->
+                <div class="itemProperty item-title" id="itemTitle">
                     <?php echo $item["item_title"]; ?>
                 </div>
-
-                <div class="item-description">
+                <div class="itemProperty item-description" id="itemDescription">
                     <?php echo $item["item_description"]; ?>
                 </div>
-
-                <div class="item-price">
+                <div class="itemProperty item-price" id="itemPrice">
                     $<?php echo $item["item_price"]; ?>
                 </div>
+
+                <!-- edit mode -->
+                <form action="../scripts/update_item_script.php" method="POST">
+                    <!--
+                        <input type="text" name="itemId">
+                    -->
+                    <div class="editInputFieldContainer">
+                        Title: <input type="text" name="itemTitle" id="newTitleInputField">
+                    </div>                
+                    <div class="editInputFieldContainer">
+                        Description: <input type="text" name="itemDescription" id="newDescriptionInputField">
+                    </div>
+                    <div class="editInputFieldContainer">
+                        Price: <input type="text" name="itemPrice" id="newPriceInputField">
+                    </div>
+                    <!--
+                        <input type="submit" value="SUBMIT">
+                    -->
+                </form>
+                
             </div>
 
             <div class="item-seller-info-container p-2 mt-3">

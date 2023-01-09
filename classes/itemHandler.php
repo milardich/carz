@@ -205,4 +205,13 @@ class ItemHandler{
         }
         return $items;
     }
+    
+    public function UpdateItem($item_id, $item_title, $item_description, $item_price){
+        $sql = "UPDATE items SET item_title = '$item_title', item_description = '$item_description', item_price = '$item_price' WHERE item_id = '$item_id'";
+        $result = Database::Connect()->query($sql);
+        if($result){
+            return true;
+        }
+        return false;
+    }
 }

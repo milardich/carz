@@ -79,7 +79,7 @@ $(document).ready(function () {
                         },
                         dataType: "text",
                         success: function (response) {
-                            console.log(response);
+                            //console.log(response);
                             $("#items-container").append(response);
                         },
                         async: false
@@ -118,7 +118,7 @@ $(document).ready(function () {
                     },
                     dataType: "text",
                     success: function (response) {
-                        console.log(response);
+                        //console.log(response);
                         $("#items-container").append(response);
                     },
                     async: false

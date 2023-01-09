@@ -200,3 +200,11 @@ a {
 .user-info-text{
   border: 1px solid blue;
 }
+
+.editInputFieldContainer {
+  display: none;
+}
+
+.modify-button{
+  display: none;
+}

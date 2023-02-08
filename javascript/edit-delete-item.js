@@ -27,8 +27,7 @@ $(document).ready(function () {
         var itemDescription = $("#newDescriptionInputField").val().trimStart().trimEnd();
         var itemPrice = $("#newPriceInputField").val().trimStart().trimEnd();
         var itemId = new URLSearchParams(window.location.search).get("id");
-        //console.log("Item id from url: " + itemId);
-        //alert("itemId: " + itemId + " -> TItle: " + itemTitle + " - itemDescrp: " + itemDescription + "  - itemPrice: " + itemPrice)
+
         $.ajax({
             url: "../scripts/update_item_script.php",
             method: "GET",
@@ -40,10 +39,6 @@ $(document).ready(function () {
             },
             success: function (response) {
                 var newData = jQuery.parseJSON(response);
-                //console.log(newData.itemId);
-                //console.log(newData.newTitle);
-                //console.log(newData.newDescription);
-                //console.log(newData.newPrice);
                 $(".itemProperty").show();
                 $(".editInputFieldContainer").hide();
                 $(".modify-button").hide();

@@ -77,9 +77,7 @@
 
                 <!-- edit mode -->
                 <form action="../scripts/update_item_script.php" method="POST">
-                    <!--
-                        <input type="text" name="itemId">
-                    -->
+
                     <div class="editInputFieldContainer">
                         Title: <input type="text" name="itemTitle" id="newTitleInputField">
                     </div>                
@@ -89,9 +87,7 @@
                     <div class="editInputFieldContainer">
                         Price: <input type="text" name="itemPrice" id="newPriceInputField">
                     </div>
-                    <!--
-                        <input type="submit" value="SUBMIT">
-                    -->
+
                 </form>
                 
             </div>

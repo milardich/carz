@@ -159,8 +159,7 @@ class ItemHandler{
             }
         }
         $sql .= " ORDER BY item_price $order_by";
-        //echo ">> " . $sql . "<br><br>";
-        //$sql = "SELECT * FROM items WHERE car_maker_id = '$car_maker_id' AND car_type_id = '$car_type_id' AND item_price BETWEEN '$min_price' AND '$max_price'";
+
         $result = Database::Connect()->query($sql);
         if($result->num_rows > 0){
             while($row = $result->fetch_assoc()){

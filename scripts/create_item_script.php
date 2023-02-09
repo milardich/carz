@@ -5,7 +5,6 @@ session_start();
 if($_SERVER['REQUEST_METHOD'] != 'POST'){
     Header("Location: ../index.php");
     exit();
-    //echo "NOT SUBMITTED!";
 }
 
 if( !isset($_POST["itemTitle"]) &&
@@ -16,7 +15,6 @@ if( !isset($_POST["itemTitle"]) &&
 ){
     Header("Location: ../pages/create_item_page.php?failed=true");
     exit();
-    //echo "EMPTY INPUT FIELDS";
 }
 else{
     $itemHandler = new ItemHandler();

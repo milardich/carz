@@ -44,7 +44,7 @@
                         <option selected>-</option>
                         <!--
                             Options are filled depending on
-                            selected car maker (using jquery and ajax)
+                            selected car maker (using jquery )
                         -->
                     </select>
                 </div>

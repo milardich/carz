@@ -5,7 +5,6 @@ include '../includes/autoLoader.php';
 Database::Connect();
 
 if(!empty($_POST["email"]) && !empty($_POST["password"])){
-    //echo "\nAuthenticating: email: " . $_POST["email"] . "  - password: " . $_POST["password"];
     $authentication = new Authentication();
     $isAuthenticated = $authentication->Authenticate($_POST["email"], $_POST["password"]);
     if($isAuthenticated){

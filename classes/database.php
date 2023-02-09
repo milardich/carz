@@ -12,7 +12,6 @@ class Database {
         if(mysqli_connect_error()){
             die("Database connection failed: " . mysqli_connect_error());
         }
-        //echo "connected!";
         return $conn;
     }
 }

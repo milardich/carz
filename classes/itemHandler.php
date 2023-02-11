@@ -222,4 +222,33 @@ class ItemHandler{
         }
         return false;
     }
+
+    public function GetItemsByTitle($item_title){
+        if($item_title == ""){
+            return "Error - search left empty";
+        }
+        $sql = "SELECT * FROM items WHERE item_title LIKE '%$item_title%'";
+        $result = Database::Connect()->query($sql);
+        if($result->num_rows > 0){
+            while($row = $result->fetch_assoc()){    
+                $items[] = array(
+                    'item_id' => $row["item_id"],
+                    'unique_item_id' => $row["unique_item_id"],
+                    'item_title' => $row["item_title"],
+                    'car_maker_id' => $row["car_maker_id"],
+                    'car_type_id' => $row["car_type_id"],
+                    'item_description' => $row["item_description"],
+                    'item_location' => $row["item_location"],
+                    'item_price' => $row["item_price"],
+                    'item_thumbnail' => $row["item_thumbnail"],
+                    'item_date_posted' => $row["item_date_posted"],
+                    'seller_id' => $row["seller_id"]
+                );
+            }
+        }
+        else{
+            $items = array();
+        }
+        return $items;
+    }
 }

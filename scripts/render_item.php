@@ -34,8 +34,8 @@ include "../includes/autoLoader.php";
             </div>
         </div>
 
-        <div class="save-button-container" id="<?php echo $_POST["item_id"]; ?>">
+        <!-- <div class="save-button-container" id="<?php //echo $_POST["item_id"]; ?>">
             <object data="../resources/bookmark-solid.svg" width="30" height="30"> </object>
-        </div>
+        </div> -->
     </a>
 </div>

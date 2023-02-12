@@ -39,4 +39,5 @@ else{
 
     $registrationHandler->Register();
     echo "Registration sucessful!";
+    header("Location: ../index.php");
 }

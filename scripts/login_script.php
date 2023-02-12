@@ -13,9 +13,9 @@ if(!empty($_POST["email"]) && !empty($_POST["password"])){
         echo "\nLOGGED USER ID: " . $_SESSION["LOGGED_IN_USER_ID"];
         Header("Location: ../index.php");
     }else{
-        Header("Location: login_page.php?failed=true");
+        Header("Location: ../pages/login_page.php?failed=true");
     }
 }
 else{
-    header('Location: login_page.php');
+    header('Location: ../pages/login_page.php');
 }

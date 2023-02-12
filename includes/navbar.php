@@ -14,7 +14,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mb-2 mb-lg-0">
             </ul>
-            <form class="d-flex ms-auto" action="../scripts/process_search_script.php" method="GET">
+            <form class="d-flex ms-auto" action="../pages/search_page.php" method="GET">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="item-title">
                 <button class="btn btn-outline-success btn-light" type="submit">Search</button>
             </form>

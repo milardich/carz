@@ -57,12 +57,18 @@
                 
             </div>
             <div>
-                <?php if($item["seller_id"] == $_SESSION["LOGGED_IN_USER_ID"]){ ?>
+                <?php 
+                if(isset($_SESSION["LOGGED_IN_USER_ID"])){
+                    if($item["seller_id"] == $_SESSION["LOGGED_IN_USER_ID"]){ 
+                ?>
                         <button class="btn btn-primary" id="editButton"> Edit </button>
                         <button class="btn btn-success modify-button" id="saveButton"> Save </button>
                         <button class="btn btn-secondary modify-button" id="cancelButton"> Cancel </button>
                         <button class="btn btn-danger modify-button" id="deleteButton"> Delete </button>
-                <?php } ?>
+                <?php
+                    }
+                }
+                ?>
             </div>
             <div class="item-info-container p-2 mt-3">
                 <!--  -->

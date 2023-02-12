@@ -81,10 +81,10 @@
             </div>
 
             <!-- Item images input -->
-            <div class="form-outline mb-4">
+            <!-- <div class="form-outline mb-4">
                 <label for="exampleFormControlFile1">Upload item images</label>
                 <input type="file" name="item_images[]" class="form-control-file" id="exampleFormControlFile1" multiple>
-            </div>
+            </div> -->
 
             <!-- Submit button -->
             <button type="submit" class="btn btn-primary mb-4 full-width-button">Create</button>

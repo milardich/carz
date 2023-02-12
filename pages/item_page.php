@@ -30,30 +30,31 @@
                 <!-- Selected item pic -->
                 <div class="item-selected-image row">
                     <div class="switch-img-button-container col-1 p-0 d-flex aligns-items-center">
-                        <button class="btn btn-secondary switch-img-button"><</button>
+                        <!-- <button class="btn btn-secondary switch-img-button"><</button> -->
                     </div>
                     <div class="col-10 p-0 item-big-picture">
                         <img src='../<?php echo $item["item_thumbnail"]; ?>'>
                     </div>
                     <div class="switch-img-button-container col-1 p-0 d-flex aligns-items-center">
-                        <button class="btn btn-secondary switch-img-button">></button>
+                        <!-- <button class="btn btn-secondary switch-img-button">></button> -->
                     </div>
                 </div>
 
                 <!-- Small item pics -->
-                <div class="row p-0 m-0 mt-3 item-pictures">
+                <!-- <div class="row p-0 m-0 mt-3 item-pictures">
                     <?php
-                        if(count($item_images) > 0){
-                            foreach($item_images as $item_image){
+                        //if(count($item_images) > 0){
+                            //foreach($item_images as $item_image){
                                 ?>
                                 <div class="col-2 item-small-picture m-0 p-0 d-block">
-                                    <img src='../<?php echo $item_image["image_url"]; ?>' alt="">
+                                    <img src='../<?php //echo $item_image["image_url"]; ?>' alt="">
                                 </div>
                                 <?php
-                            }
-                        }
+                        //     }
+                        // }
                     ?>
-                </div>
+                </div> -->
+                
             </div>
             <div>
                 <?php if($item["seller_id"] == $_SESSION["LOGGED_IN_USER_ID"]){ ?>

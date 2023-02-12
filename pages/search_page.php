@@ -28,7 +28,9 @@
                     echo "No items with title " . $itemTitle;
                 }
                 else{
-
+                    if($_GET["item-title"] == ""){
+                        $items = array();
+                    }
                     foreach($items as $item){
                         ?>
                         <div class="col-md-3 item-container">
